@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"fmt"
@@ -30,7 +30,7 @@ func (h helloService) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.He
 	return resp, nil
 }
 
-func main() {
+func runServer() {
 	listen, err := net.Listen("tcp", Address)
 	if err != nil {
 		grpclog.Fatalf("Failed to listen: %v", err)

@@ -1,4 +1,4 @@
-package main
+package client
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ const (
 	Address = "127.0.0.1:50052"
 )
 
-func main() {
+func runClient() {
 	// 连接
 	conn, err := grpc.Dial(Address, grpc.WithInsecure())
 	if err != nil {

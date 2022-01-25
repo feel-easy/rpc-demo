@@ -7,7 +7,7 @@
 // 函数第一参数是接收参数，第二个参数是返回给客户端的参数，必须是指针类型
 
 // 函数还必须有一个返回值error
-package cmd
+package rpc
 
 import (
 	"errors"
@@ -94,7 +94,7 @@ func server() {
 	}
 }
 
-var serverCmd = &cobra.Command{
+var ServerCmd = &cobra.Command{
 	Use:   "server",
 	Short: "server Short",
 
@@ -105,5 +105,5 @@ var serverCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(serverCmd)
+	// rootCmd.AddCommand(serverCmd)
 }
