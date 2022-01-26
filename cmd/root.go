@@ -5,7 +5,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "rpcdemo",
+	Use:   "demo",
 	Short: "关于rpc的演示程序",
 	Long:  `关于rpc的一些演示程序`,
 	// Run: func(cmd *cobra.Command, args []string) {
