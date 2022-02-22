@@ -8,12 +8,13 @@
 # --python_out指定生成py文件的输出路径
 # hello.proto 输入的proto文件
 import grpc
-import hello_pb2, hello_pb2_grpc
-
+# import hello_pb2, hello_pb2_grpc
+from  hello_pb2 import HelloRequest
+from  hello_pb2_grpc import HelloStub
 def run():
   conn = grpc.insecure_channel('localhost:50052')
-  client = hello_pb2_grpc.HelloStub(channel=conn)   # 客户端使用Stub类发送请求,参数为频道,为了绑定链接
-  response = client.SayHello(hello_pb2.HelloRequest(name='py grpc!'))   # 返回的结果就是proto中定义的类
+  client = HelloStub(channel=conn)   # 客户端使用Stub类发送请求,参数为频道,为了绑定链接
+  response = client.SayHello(HelloRequest(name='py grpc!'))   # 返回的结果就是proto中定义的类
   print(response.message)
   
 if __name__ == '__main__':
